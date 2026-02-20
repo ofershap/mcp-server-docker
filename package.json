@@ -1,10 +1,10 @@
 {
-  "name": "mcp-server-docker",
+  "name": "mcp-docker-server",
   "version": "1.0.0",
   "description": "MCP server for Docker — manage containers, images, volumes, and compose services from your IDE",
   "type": "module",
   "bin": {
-    "mcp-server-docker": "./dist/index.js"
+    "mcp-docker-server": "./dist/index.js"
   },
   "files": [
     "dist"

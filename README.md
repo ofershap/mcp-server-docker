@@ -1,20 +1,26 @@
 # mcp-server-docker
 
-[![npm version](https://img.shields.io/npm/v/mcp-server-docker.svg)](https://www.npmjs.com/package/mcp-server-docker)
-[![npm downloads](https://img.shields.io/npm/dm/mcp-server-docker.svg)](https://www.npmjs.com/package/mcp-server-docker)
+[![npm version](https://img.shields.io/npm/v/mcp-docker-server.svg)](https://www.npmjs.com/package/mcp-docker-server)
+[![npm downloads](https://img.shields.io/npm/dm/mcp-docker-server.svg)](https://www.npmjs.com/package/mcp-docker-server)
 [![CI](https://github.com/ofershap/mcp-server-docker/actions/workflows/ci.yml/badge.svg)](https://github.com/ofershap/mcp-server-docker/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Manage Docker containers, images, and services directly from your AI assistant — list, start, stop, inspect logs, execute commands, and monitor resource usage.
+Control Docker containers, images, and services from your AI coding assistant. List, start, stop, read logs, run commands inside containers, and check resource usage.
 
 ```bash
-npx mcp-server-docker
+npx mcp-docker-server
 ```
 
-> Works with Claude Desktop, Cursor, VS Code Copilot, and any MCP client. Zero auth — connects to your local Docker socket automatically.
+> Compatible with Claude Desktop, Cursor, VS Code Copilot, and any MCP-compatible client. No API keys needed. Connects to your local Docker socket automatically.
 
-![Demo](assets/demo.gif)
+![MCP server for Docker containers, logs, and resource monitoring](assets/demo.gif)
+
+<sub>Demo built with <a href="https://github.com/ofershap/remotion-readme-kit">remotion-readme-kit</a></sub>
+
+## Why
+
+If you work with Docker daily, you know the routine: switch to a terminal, type `docker ps`, scroll through logs, copy container IDs, restart services. It adds up. This MCP server lets your AI assistant handle those tasks for you while you stay focused on code. Ask it to check which containers are running, pull up logs from a failing service, or restart something that got stuck. It talks to Docker's API through the local socket, so there's nothing to configure and no credentials to manage.
 
 ## Tools
 
@@ -42,7 +48,7 @@ Add to `.cursor/mcp.json`:
   "mcpServers": {
     "docker": {
       "command": "npx",
-      "args": ["-y", "mcp-server-docker"]
+      "args": ["-y", "mcp-docker-server"]
     }
   }
 }
@@ -57,7 +63,7 @@ Add to `claude_desktop_config.json`:
   "mcpServers": {
     "docker": {
       "command": "npx",
-      "args": ["-y", "mcp-server-docker"]
+      "args": ["-y", "mcp-docker-server"]
     }
   }
 }
@@ -73,7 +79,7 @@ Add to user settings or `.vscode/mcp.json`:
     "servers": {
       "docker": {
         "command": "npx",
-        "args": ["-y", "mcp-server-docker"]
+        "args": ["-y", "mcp-docker-server"]
       }
     }
   }
@@ -93,7 +99,7 @@ Add to user settings or `.vscode/mcp.json`:
 ## Prerequisites
 
 - **Docker** must be running on your machine
-- The MCP server connects to the Docker socket at `/var/run/docker.sock` (Linux/macOS) or the named pipe on Windows
+- The server connects to the Docker socket at `/var/run/docker.sock` (Linux/macOS) or the named pipe on Windows
 - No API keys or tokens required
 
 ## Development
